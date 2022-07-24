@@ -35,7 +35,6 @@ void	sa(t_stacks_ab	*stacks, t_list	**rules)
 	if (stacks->stack_a->count < 2)
 		return ;
 	s_abs(stacks->stack_a);
-	printf("%s\n", SA);
 	archive_used_rule(rules, SA);
 }
 
@@ -44,6 +43,5 @@ void	sb(t_stacks_ab	*stacks, t_list	**rules)
 	if (stacks->stack_b->count < 2)
 		return ;
 	s_abs(stacks->stack_b);
-	printf("%s\n", SB);
 	archive_used_rule(rules, SB);
 }

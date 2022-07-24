@@ -74,7 +74,7 @@ int	main(int argc, char	**argv)
 	rules = NULL;
 	get_idx(stacks->stack_a);
 	sorting_processor(stacks, &rules);
-	//print_used_rules(rules);
+	print_used_rules(rules);
 	//put_everything_in_stack(stacks->stack_a);
 	exit(0);
 }

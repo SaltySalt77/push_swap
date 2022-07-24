@@ -17,7 +17,6 @@ static int	is_at_topside(t_stack	*stack, int	max)
 			return (1);
 		cur = cur->next;
 	}
-	printf("tetet\n");
 	return (0);
 }
 

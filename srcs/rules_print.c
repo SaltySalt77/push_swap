@@ -13,7 +13,7 @@
 #include "libft.h"
 #include "push_swap.h"
 #include "ft_printf.h"
-/*
+
 static char	*is_in_same_time(t_list	*cur)
 {
 	char	*cur_element;
@@ -39,17 +39,17 @@ static char	*is_in_same_time(t_list	*cur)
 			return (RR);
 	}
 	return (NULL);
-}*/
+}
 
 void	print_used_rules(t_list	*rules)
 {
 	t_list	*cur;
-//	char	*rule;
+	char	*rule;
 
 	cur = rules;
 	while (cur)
 	{
-	/*	rule = is_in_same_time(cur);
+		rule = is_in_same_time(cur);
 		if (rule)
 		{
 			ft_printf("%s\n", rule);
@@ -57,7 +57,6 @@ void	print_used_rules(t_list	*rules)
 		}
 		else
 			ft_printf("%s\n", cur->content);
-	*/	ft_printf("%s\n", cur->content);
 		cur = cur->next;
 	}
 }

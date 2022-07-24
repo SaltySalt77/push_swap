@@ -15,6 +15,5 @@ int	get_chunk(t_stack	*stack)
 		chunk *= 5;
 	else
 		chunk *= 10;
-	printf("%d\n", chunk);
 	return (chunk);
 }
