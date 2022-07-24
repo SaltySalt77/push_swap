@@ -32,6 +32,7 @@ void	pa(t_stacks_ab	*stacks, t_list	**rules)
 	if (is_empty(stacks->stack_b))
 		return ;
 	p_ab(stacks->stack_b, stacks->stack_a);
+	printf("%s\n", PA);
 	archive_used_rule(rules, PA);
 }
 
@@ -40,5 +41,6 @@ void	pb(t_stacks_ab	*stacks, t_list	**rules)
 	if (is_empty(stacks->stack_a))
 		return ;
 	p_ab(stacks->stack_a, stacks->stack_b);
+	printf("%s\n", PB);
 	archive_used_rule(rules, PB);
 }

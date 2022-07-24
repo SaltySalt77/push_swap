@@ -24,7 +24,7 @@ static void	rr_abr(t_stack *stack)
 	push(bottom->element, stack);
 	stack->bottom = bottom->prev;
 	stack->bottom->next = NULL;
-	stack->bottom->idx = idx;
+	stack->top->idx = idx;
 	stack->count--;
 	free(bottom);
 }
@@ -34,6 +34,7 @@ void	rra(t_stacks_ab	*stacks, t_list	**rules)
 	if (stacks->stack_a->count < 2)
 		return ;
 	rr_abr(stacks->stack_a);
+	printf("%s\n", RRA);
 	archive_used_rule(rules, RRA);
 }
 
@@ -42,5 +43,6 @@ void	rrb(t_stacks_ab	*stacks, t_list	**rules)
 	if (stacks->stack_b->count < 2)
 		return ;
 	rr_abr(stacks->stack_b);
+	printf("%s\n", RRB);
 	archive_used_rule(rules, RRB);
 }

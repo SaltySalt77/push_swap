@@ -30,6 +30,5 @@ void	sorting_processor(t_stacks_ab	*stacks, t_list	**rules)
 		return ;
 	}
 	divide_into_chunks(stacks, rules);
-	//while (!is_empty(stacks->stack_b))
-	//	pa(stacks, rules);
+	push_back_to_a(stacks, rules);
 }

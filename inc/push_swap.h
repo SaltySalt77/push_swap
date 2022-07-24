@@ -71,6 +71,7 @@ void	sb(t_stacks_ab	*stacks, t_list	**rules);
 
 //algoritm
 void	divide_into_chunks(t_stacks_ab	*stacks, t_list	**rules);
+void	push_back_to_a(t_stacks_ab	*stacks, t_list	**rules);
 int		get_chunk(t_stack	*stack);
 
 //sorting hard code

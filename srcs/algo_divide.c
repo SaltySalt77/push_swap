@@ -10,7 +10,7 @@ static void	divide(t_stacks_ab	*stacks, t_list	**rules, int num, int chunk)
 		if (stacks->stack_a->top->idx <= num + chunk)
 		{
 			pb(stacks, rules);
-			if (stack_b->top->idx >= num)
+			if (stack_b->top->idx > num)
 				rb(stacks, rules);
 		}
 		else

@@ -17,10 +17,11 @@ static int	is_at_topside(t_stack	*stack, int	max)
 			return (1);
 		cur = cur->next;
 	}
+	printf("tetet\n");
 	return (0);
 }
 
-static void	get_max_to_top(t_stack_ab	*stacks, t_list	**rules, int max)
+static void	get_max_to_top(t_stacks_ab	*stacks, t_list	**rules, int max)
 {
 	if (is_at_topside(stacks->stack_b, max))
 	{
@@ -34,7 +35,7 @@ static void	get_max_to_top(t_stack_ab	*stacks, t_list	**rules, int max)
 	}
 }
 
-void	push_max_to_a(t_stack_ab	*stacks, t_list	**rules)
+void	push_back_to_a(t_stacks_ab	*stacks, t_list	**rules)
 {
 	int	max;
 

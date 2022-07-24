@@ -28,7 +28,7 @@ void	put_everything_in_stack(t_stack	*stack)
 	cur = stack->top;
 	while (cur != NULL)
 	{
-		ft_printf("%d\n", cur->idx);
+		ft_printf("%d\n", cur->element);
 		cur = cur->next;
 	}
 	ft_printf("testing %d done\n", nbr);
@@ -74,8 +74,7 @@ int	main(int argc, char	**argv)
 	rules = NULL;
 	get_idx(stacks->stack_a);
 	sorting_processor(stacks, &rules);
-	print_used_rules(rules);
+	//print_used_rules(rules);
 	//put_everything_in_stack(stacks->stack_a);
-	//put_everything_in_stack(stacks->stack_b);
 	exit(0);
 }
