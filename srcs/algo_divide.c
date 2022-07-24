@@ -23,11 +23,11 @@ void	divide_into_chunks(t_stacks_ab	*stacks, t_list	**rules)
 	int	chunk;
 	int	num;
 
-	num = 0;
 	chunk = get_chunk(stacks->stack_a);
+	num = chunk;
 	while (!is_empty(stacks->stack_a))
 	{
 		divide(stacks, rules, num, chunk);
-		num += chunk;
+		num += chunk * 2;
 	}
 }

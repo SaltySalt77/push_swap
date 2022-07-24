@@ -75,8 +75,7 @@ int	main(int argc, char	**argv)
 	get_idx(stacks->stack_a);
 	sorting_processor(stacks, &rules);
 	print_used_rules(rules);
-	put_everything_in_stack(stacks->stack_a);
-	put_everything_in_stack(stacks->stack_b);
+	//put_everything_in_stack(stacks->stack_a);
+	//put_everything_in_stack(stacks->stack_b);
 	exit(0);
-	return (0);
 }
