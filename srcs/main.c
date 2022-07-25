@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 12:18:33 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/25 16:48:25 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/25 21:12:18 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(int argc, char	**argv)
 	t_list		*rules;
 
 	if (argc < 2)
-		put_error_exit();
+		return (1);
 	stacks = malloc(sizeof(t_stacks_ab));
 	if (stacks == NULL)
 		put_error_exit();

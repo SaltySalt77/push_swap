@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:18:25 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/17 15:00:23 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/25 22:01:11 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	pop(t_stack	*stack)
 	int		element;
 
 	pop = stack->top;
-	top = pop->next;
+	top = stack->top->next;
 	if (top)
 		top->prev = NULL;
 	stack->top = top;

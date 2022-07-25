@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:06:41 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/25 12:08:14 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/25 21:53:22 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,12 @@ static void	get_max_to_top(t_stacks_ab	*stacks, t_list	**rules, int max)
 	if (is_at_topside(stacks->stack_b, max))
 	{
 		while (stacks->stack_b->top->idx != max)
-			rb(stacks, rules);
+		{
+			if (stacks->stack_b->top->next->idx == max - 1)
+				sb(stacks, rules);
+			else
+				rb(stacks, rules);
+		}
 	}
 	else
 	{

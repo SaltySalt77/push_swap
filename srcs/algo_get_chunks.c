@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:06:29 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/25 12:06:36 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/25 21:56:00 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,14 @@
 
 int	get_chunk(t_stack	*stack)
 {
-	int	chunk;
+	double	chunk;
+	double	x;
+	double	tmp;
 
-	chunk = 15;
-	if (stack->count < 100)
-		chunk *= 1;
-	else if (stack->count < 500)
-		chunk *= 2;
-	else if (stack->count < 1000)
-		chunk *= 3;
-	else if (stack->count < 2000)
-		chunk *= 5;
-	else
-		chunk *= 10;
-	return (chunk);
+	x = stack->count;
+	chunk = 0.000000053 * x * x + 0.03 * x + 14.5;
+	tmp = chunk - (int) chunk;
+	if (tmp > 0.5)
+		chunk++;
+	return ((int) chunk);
 }
