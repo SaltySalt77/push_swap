@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algo_push_back_to_a.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyna <hyna@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/25 12:06:41 by hyna              #+#    #+#             */
+/*   Updated: 2022/07/25 12:08:14 by hyna             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static int	is_at_topside(t_stack	*stack, int	max)
+static int	is_at_topside(t_stack	*stack, int max)
 {
 	int		half;
 	int		i;

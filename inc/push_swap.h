@@ -84,8 +84,10 @@ void	put_error_exit(void);
 void	put_everything_in_stack(t_stack	*stack);
 
 //etc
+void	free_all(t_stacks_ab	*stacks, t_list	**rules);
 void	get_idx(t_stack	*stack);
 void	sorting_processor(t_stacks_ab *stacks, t_list	**rules);
 int		is_in_asc(t_stack	*stack);
 int		is_in_desc(t_stack	*stack);
+
 #endif

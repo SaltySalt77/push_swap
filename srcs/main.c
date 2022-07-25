@@ -75,6 +75,7 @@ int	main(int argc, char	**argv)
 	get_idx(stacks->stack_a);
 	sorting_processor(stacks, &rules);
 	print_used_rules(rules);
-	//put_everything_in_stack(stacks->stack_a);
+	free_all(stacks, &rules);
+	system("leaks push_swap > leaks_result; cat leaks_result | grep leaked; rm -rf leaks_result");
 	exit(0);
 }

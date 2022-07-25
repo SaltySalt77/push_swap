@@ -33,6 +33,7 @@ SRCS_NAME = main.c\
 			algo_divide.c\
 			algo_get_chunks.c\
 			algo_push_back_to_a.c\
+			etc_free_all.c\
 			
 
 SRCS_PATH = ./srcs
