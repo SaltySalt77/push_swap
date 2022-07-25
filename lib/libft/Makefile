@@ -60,6 +60,7 @@ SRCS	 =	ft_isalpha.c	\
 			print_in_conversions2.c	\
 			conversion_x_utils.c	\
 			conversion_p_utils.c	\
+			ft_strjoin_free.c\
 
 
 OBJS = $(SRCS:.c=.o)

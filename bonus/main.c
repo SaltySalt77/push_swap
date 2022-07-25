@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 12:18:33 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/25 16:48:25 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/25 16:28:58 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ static int	has_duplicats(t_stack	*stack)
 int	main(int argc, char	**argv)
 {
 	t_stacks_ab	*stacks;
-	t_list		*rules;
 
 	if (argc < 2)
 		put_error_exit();
@@ -54,12 +53,7 @@ int	main(int argc, char	**argv)
 	if (has_duplicats(stacks->stack_a))
 		put_error_exit();
 	stacks->stack_b = init_stack();
-	if (stacks->stack_b == NULL)
-		put_error_exit();
-	rules = NULL;
-	get_idx(stacks->stack_a);
-	sorting_processor(stacks, &rules);
-	print_used_rules(rules);
-	free_all(stacks, &rules);
+	//checking processor
+	free_all(stacks, NULL);
 	return (0);
 }
