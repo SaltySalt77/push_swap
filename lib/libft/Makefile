@@ -1,7 +1,7 @@
 NAME = libft.a
 
 CC = cc
-CCFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
+CCFLAGS = -Wall -Werror -Wextra
 
 AR = ar
 ARFLAGS = rcus

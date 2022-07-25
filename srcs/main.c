@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 12:18:33 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/17 20:25:58 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/25 14:56:54 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,5 @@ int	main(int argc, char	**argv)
 	sorting_processor(stacks, &rules);
 	print_used_rules(rules);
 	free_all(stacks, &rules);
-	system("leaks push_swap > leaks_result; cat leaks_result | grep leaked; rm -rf leaks_result");
-	exit(0);
+	return (0);
 }

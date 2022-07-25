@@ -6,13 +6,13 @@
 #    By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 11:09:53 by hyna              #+#    #+#              #
-#    Updated: 2022/07/17 20:04:59 by hyna             ###   ########.fr        #
+#    Updated: 2022/07/25 15:02:02 by hyna             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-CCFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
+CCFLAGS = -Wall -Werror -Wextra
 INC_LINK = -I./inc
 LIBS = -L./lib/libft -lft\
 
@@ -61,6 +61,8 @@ fclean : clean
 	rm -rf ./lib/libft/libft.a
 	rm -rf $(NAME)
 
-re : fclean all
+re :
+	$(MAKE) fclean
+	$(MAKE) all 
 
 .PHONY: all clean fclean

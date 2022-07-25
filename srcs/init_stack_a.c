@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:16:59 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/17 18:10:38 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/25 14:56:31 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static int	is_in_int_range(int nbr, char	*element)
 		if (element[0] != '+' && element[0] != '0')
 			put_error_exit();
 	}
+	free(compare);
 	return (1);
 }	
 
