@@ -35,6 +35,7 @@ void	push(int item, t_stack	*stack)
 		put_error_exit();
 	new_element->element = item;
 	new_element->next = stack->top;
+	new_element->prev = NULL;
 	if (stack->top != NULL)
 	{
 		sec_element = stack->top;
