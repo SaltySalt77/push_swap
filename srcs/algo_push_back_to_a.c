@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:06:41 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/25 21:53:22 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 19:23:02 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	get_max_to_top(t_stacks_ab	*stacks, t_list	**rules, int max)
 	{
 		while (stacks->stack_b->top->idx != max)
 		{
-			if (stacks->stack_b->top->next->idx == max - 1)
+			if (stacks->stack_b->top->next->idx == max)
 				sb(stacks, rules);
 			else
 				rb(stacks, rules);

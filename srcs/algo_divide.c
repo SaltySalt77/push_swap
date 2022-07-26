@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:06:25 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/25 22:07:15 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 19:22:27 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,14 @@ void	divide_into_chunks(t_stacks_ab	*stacks, t_list	**rules)
 {
 	int	chunk;
 	int	num;
+	int	flag;
 
 	chunk = get_chunk(stacks->stack_a);
 	num = chunk;
+	flag = is_topside(stacks->stack_a);
 	while (!is_empty(stacks->stack_a))
 	{
-		if (is_topside(stacks->stack_a))
+		if (flag)
 			divide_ra(stacks, rules, num, chunk);
 		else
 			divide_rra(stacks, rules, num, chunk);
