@@ -6,19 +6,20 @@
 /*   By: hyna <hyna@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:06:25 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/26 19:36:47 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 21:44:44 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	divide_rra(t_stacks_ab	*stacks, t_list	**rules, int num, int chunk)
+void	divide_rra(t_stacks_ab	*stacks, t_list	**rules, int num, int chunk)
 {
 	t_stack	*stack_b;
 
 	stack_b = stacks->stack_b;
 	while (stack_b->count != num + chunk && !is_empty(stacks->stack_a))
 	{
+		num = stacks->stack_b->count;
 		if (stacks->stack_a->top->idx <= num + chunk)
 		{
 			pb(stacks, rules);
@@ -30,13 +31,14 @@ static void	divide_rra(t_stacks_ab	*stacks, t_list	**rules, int num, int chunk)
 	}
 }
 
-static void	divide_ra(t_stacks_ab	*stacks, t_list	**rules, int num, int chunk)
+void	divide_ra(t_stacks_ab	*stacks, t_list	**rules, int num, int chunk)
 {
 	t_stack	*stack_b;
 
 	stack_b = stacks->stack_b;
 	while (stack_b->count != num + chunk && !is_empty(stacks->stack_a))
 	{
+		num = stacks->stack_b->count;
 		if (stacks->stack_a->top->idx <= num + chunk)
 		{
 			pb(stacks, rules);
@@ -48,7 +50,7 @@ static void	divide_ra(t_stacks_ab	*stacks, t_list	**rules, int num, int chunk)
 	}
 }
 
-static int	is_topside(t_stack	*stack)
+static int	is_topside(t_stack	*stack, int num, int chunk)
 {
 	int		count;
 	int		half;
@@ -59,10 +61,9 @@ static int	is_topside(t_stack	*stack)
 	half = stack->count / 2;
 	top = stack->top->idx;
 	cur = stack->top;
-	while (cur != NULL)
+	while (cur != NULL && cur->idx > num + chunk)
 	{
-		if (cur->idx < top)
-			count++;
+		count++;
 		if (count > half)
 			return (0);
 		cur = cur->next;
@@ -70,19 +71,41 @@ static int	is_topside(t_stack	*stack)
 	return (1);
 }
 
+#include <stdio.h> // 지우기 ! 
 void	divide_into_chunks(t_stacks_ab	*stacks, t_list	**rules)
 {
 	int	chunk;
 	int	num;
+	t_node	*cur;
 
 	chunk = get_chunk(stacks->stack_a);
-	num = chunk;
+	cur = stacks->stack_a->top;
 	while (!is_empty(stacks->stack_a))
 	{
-		if (is_topside(stacks->stack_a))
-			divide_ra(stacks, rules, num, chunk);
-		else
-			divide_rra(stacks, rules, num, chunk);
-		num += chunk * 2;
+		num = stacks->stack_b->count;
+		// printf("stack A size : %d\n", stacks->stack_a->count);
+		// printf("stack A element : %d\n", stacks->stack_a->top->element);
+		// printf("stack A idx : %d\n", stacks->stack_a->top->idx);
+		// printf("stack B : %d\n", num);
+
+		
+		if (cur->idx <= num)
+		{
+			// printf("HEY!!\n");
+			pb(stacks, rules);
+		}
+		else if (cur->idx > num && cur->idx <= num + chunk)
+		{
+			pb(stacks, rules);
+			rb(stacks, rules);
+		}
+		else if (cur->idx > num + chunk)
+		{
+			if (is_topside(stacks->stack_a, num, chunk))
+				ra(stacks, rules);
+			else
+				rra(stacks, rules);
+		}
+		cur = stacks->stack_a->top;
 	}
 }
