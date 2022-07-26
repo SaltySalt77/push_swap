@@ -6,7 +6,7 @@
 #    By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 11:09:53 by hyna              #+#    #+#              #
-#    Updated: 2022/07/26 19:51:58 by hyna             ###   ########.fr        #
+#    Updated: 2022/07/26 22:01:15 by hyna             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,9 @@ $(OBJS_PATH)/%.o : $(SRCS_PATH)/%.c
 	@mkdir $(OBJS_PATH) 2> /dev/null || true
 	$(CC) $(INC_LINK) $(CCFLAGS) -c $< -o $@
 
-bonus : $(BONUS_OBJS)
+bonus : $(BONUS)
+
+$(BONUS) : $(BONUS_OBJS)
 	@$(MAKE) -C ./lib/libft all
 	$(CC) $(CCFLAGS) $(LIBS) -o $(BONUS) $(BONUS_OBJS)
 
