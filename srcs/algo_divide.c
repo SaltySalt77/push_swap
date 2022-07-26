@@ -6,49 +6,11 @@
 /*   By: hyna <hyna@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:06:25 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/26 21:51:57 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 22:28:10 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	divide_rra(t_stacks_ab	*stacks, t_list	**rules, int num, int chunk)
-{
-	t_stack	*stack_b;
-
-	stack_b = stacks->stack_b;
-	while (stack_b->count != num + chunk && !is_empty(stacks->stack_a))
-	{
-		num = stacks->stack_b->count;
-		if (stacks->stack_a->top->idx <= num + chunk)
-		{
-			pb(stacks, rules);
-			if (stack_b->top->idx > num)
-				rb(stacks, rules);
-		}
-		else
-			rra(stacks, rules);
-	}
-}
-
-void	divide_ra(t_stacks_ab	*stacks, t_list	**rules, int num, int chunk)
-{
-	t_stack	*stack_b;
-
-	stack_b = stacks->stack_b;
-	while (stack_b->count != num + chunk && !is_empty(stacks->stack_a))
-	{
-		num = stacks->stack_b->count;
-		if (stacks->stack_a->top->idx <= num + chunk)
-		{
-			pb(stacks, rules);
-			if (stack_b->top->idx > num)
-				rb(stacks, rules);
-		}
-		else
-			ra(stacks, rules);
-	}
-}
 
 static int	is_topside(t_stack	*stack, int num, int chunk)
 {
