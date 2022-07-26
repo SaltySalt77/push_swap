@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 14:03:09 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/26 16:35:45 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 17:05:40 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	**get_instr(void)
 	while (1)
 	{
 		cur = get_next_line(0);
-		if (cur	== NULL || cur[0] == -128)
+		if (cur	== NULL || cur[0] < 0)
 			break ;
 		if (cur != NULL)
 		{
@@ -67,13 +67,10 @@ static void	check_and_excute(t_stacks_ab	*stacks, char	*instr)
 		excute_rotates(stacks, instr);
 	else if (instr[0] == 's' || instr[0] == 'p')
 		excute_push_swap(stacks, instr);
-	else if (instr[0] == -128)
+	else if (instr[0] < 32 || instr[0] > 126)
 		return ;
 	else
-	{
-		ft_printf("%d\n", instr[0]);
 		put_error_exit();
-	}
 }
 
 void	put_stacks(t_stack	*stack)
@@ -83,7 +80,7 @@ void	put_stacks(t_stack	*stack)
 	cur = stack->top;
 	while (cur != NULL)
 	{
-		ft_printf("%d\n", cur->idx);
+		ft_printf("%d\n", cur->element);
 		cur = cur->next;
 	}
 	ft_printf("-------\n");
@@ -96,6 +93,7 @@ void	checker(t_stacks_ab	*stacks)
 
 	i = 0;
 	instr = get_instr();
+	put_stacks(stacks->stack_a);
 	while (instr[i] != NULL)
 		check_and_excute(stacks, instr[i++]);
 	while (i >= 0)
