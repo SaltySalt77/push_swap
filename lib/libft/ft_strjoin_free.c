@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 16:41:04 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/25 16:41:09 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 16:22:28 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin_free(char	*s1, char *s2)
 	size_t	pos;
 
 	if (!s1)
-		return (s2);
+		return (ft_strdup(s2));
 	else if (!s2)
 		return (s1);
 	s1len = ft_strlen(s1);
@@ -36,7 +36,7 @@ char	*ft_strjoin_free(char	*s1, char *s2)
 	pos = 0;
 	while (pos < s2len)
 		result[s1len++] = s2[pos++];
-	free(s1);
-	free(s2);
+	//free(s1);
+	//free(s2);
 	return (result);
 }

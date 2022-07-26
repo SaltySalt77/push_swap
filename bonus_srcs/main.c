@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 12:18:33 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/25 16:28:58 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 15:15:16 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int argc, char	**argv)
 	t_stacks_ab	*stacks;
 
 	if (argc < 2)
-		put_error_exit();
+		return (1);
 	stacks = malloc(sizeof(t_stacks_ab));
 	if (stacks == NULL)
 		put_error_exit();
@@ -53,7 +53,7 @@ int	main(int argc, char	**argv)
 	if (has_duplicats(stacks->stack_a))
 		put_error_exit();
 	stacks->stack_b = init_stack();
-	//checking processor
+	checker(stacks);
 	free_all(stacks, NULL);
 	return (0);
 }

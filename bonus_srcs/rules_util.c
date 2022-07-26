@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   rules_util.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/14 18:17:45 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/26 15:04:22 by hyna             ###   ########.fr       */
+/*   Created: 2022/07/14 15:45:11 by hyna              #+#    #+#             */
+/*   Updated: 2022/07/17 20:25:27 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "push_swap.h"
+#include "libft.h"
 
-char	*free_str(char	*s)
+void	archive_used_rule(t_list	**rules, char	*used_rule)
 {
-	free(s);
-	return (NULL);
+	t_list	*new;
+
+	new = ft_lstnew(used_rule);
+	if (new == NULL)
+		put_error_exit();
+	ft_lstadd_back(rules, new);
 }

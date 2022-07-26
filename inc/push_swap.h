@@ -6,14 +6,13 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:11:16 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/15 15:52:06 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 14:38:39 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include "libft.h"
 
@@ -89,5 +88,8 @@ void	get_idx(t_stack	*stack);
 void	sorting_processor(t_stacks_ab *stacks, t_list	**rules);
 int		is_in_asc(t_stack	*stack);
 int		is_in_desc(t_stack	*stack);
+
+//checker
+void	checker(t_stacks_ab	*stacks);
 
 #endif
