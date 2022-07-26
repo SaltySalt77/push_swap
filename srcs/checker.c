@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 14:03:09 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/26 18:43:34 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 19:12:34 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,35 +42,35 @@ char	**get_instr(void)
 	return (instr);
 }
 
-static void	excute_instr(t_stacks_ab	*stacks, char	*instr)
+static void	excute_instr(t_stacks_ab	*stacks, t_list	**rules, char	*instr)
 {
 	if (ft_strncmp(instr, SA, 3) == 0)
-		sa(stacks, NULL);
+		sa(stacks, rules);
 	else if (ft_strncmp(instr, SB, 3) == 0)
-		sb(stacks, NULL);
+		sb(stacks, rules);
 	else if (ft_strncmp(instr, SS, 3) == 0)
-		ss(stacks, NULL);
+		ss(stacks, rules);
 	else if (ft_strncmp(instr, PA, 3) == 0)
-		pa(stacks, NULL);
+		pa(stacks, rules);
 	else if (ft_strncmp(instr, PB, 3) == 0)
-		pb(stacks, NULL);
+		pb(stacks, rules);
 	else if (ft_strncmp(instr, RA, 3) == 0)
-		ra(stacks, NULL);
+		ra(stacks, rules);
 	else if (ft_strncmp(instr, RB, 3) == 0)
-		rb(stacks, NULL);
+		rb(stacks, rules);
 	else if (ft_strncmp(instr, RR, 3) == 0 && ft_strlen(instr) == 2)
-		rr(stacks, NULL);
+		rr(stacks, rules);
 	else if (ft_strncmp(instr, RRA, 4) == 0)
-		rra(stacks, NULL);
+		rra(stacks, rules);
 	else if (ft_strncmp(instr, RRB, 4) == 0)
-		rrb(stacks, NULL);
+		rrb(stacks, rules);
 	else if (ft_strncmp(instr, RRR, 4) == 0)
-		rrr(stacks, NULL);
+		rrr(stacks, rules);
 	else
 		put_error_exit();
 }
 
-void	checker(t_stacks_ab	*stacks)
+void	checker(t_stacks_ab	*stacks, t_list	**rules)
 {
 	char	**instr;
 	int		i;
@@ -81,9 +81,10 @@ void	checker(t_stacks_ab	*stacks)
 	{
 		if (instr[i][0] < 32 || instr[i][0] > 126)
 			break ;
-		excute_instr(stacks, ft_strtrim(instr[i], " "));
-		free(instr[i++]);
+		excute_instr(stacks, rules, instr[i++]);
 	}
+	while (i >= 0)
+		free(instr[i--]);
 	free(instr);
 	if (is_in_asc(stacks->stack_a) && is_empty(stacks->stack_b))
 		ft_putstr_fd("OK\n", 2);

@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 16:41:04 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/26 18:42:18 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 19:03:38 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin_free(char	*s1, char *s2)
 	size_t	pos;
 
 	if (!s1)
-		return (ft_strdup(s2));
+		return (s2);
 	else if (!s2)
 		return (s1);
 	s1len = ft_strlen(s1);

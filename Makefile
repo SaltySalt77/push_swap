@@ -6,14 +6,14 @@
 #    By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 11:09:53 by hyna              #+#    #+#              #
-#    Updated: 2022/07/26 18:36:44 by hyna             ###   ########.fr        #
+#    Updated: 2022/07/26 18:48:01 by hyna             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 BONUS = checker
 CC = cc
-CCFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
+CCFLAGS = -Wall -Werror -Wextra
 INC_LINK = -I./inc
 LIBS = -L./lib/libft -lft\
 

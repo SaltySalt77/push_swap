@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   checker_main.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 12:18:33 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/26 15:15:16 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 19:13:09 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ static int	has_duplicats(t_stack	*stack)
 int	main(int argc, char	**argv)
 {
 	t_stacks_ab	*stacks;
+	t_list		*rules;
 
 	if (argc < 2)
 		return (1);
@@ -53,7 +54,8 @@ int	main(int argc, char	**argv)
 	if (has_duplicats(stacks->stack_a))
 		put_error_exit();
 	stacks->stack_b = init_stack();
-	checker(stacks);
-	free_all(stacks, NULL);
+	rules = NULL;
+	checker(stacks, &rules);
+	free_all(stacks, &rules);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:11:16 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/26 17:53:44 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 19:11:57 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,6 @@ int		is_in_asc(t_stack	*stack);
 int		is_in_desc(t_stack	*stack);
 
 //checker
-void	checker(t_stacks_ab	*stacks);
+void	checker(t_stacks_ab	*stacks, t_list	**rules);
 
 #endif
