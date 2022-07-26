@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:11:16 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/26 14:38:39 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 17:53:44 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,13 @@ void	pa(t_stacks_ab	*stacks, t_list	**rules);
 void	pb(t_stacks_ab	*stacks, t_list	**rules);
 void	ra(t_stacks_ab	*stacks, t_list	**rules);
 void	rb(t_stacks_ab	*stacks, t_list	**rules);
+void	rr(t_stacks_ab	*stacks, t_list	**rules);
 void	rra(t_stacks_ab	*stacks, t_list	**rules);
 void	rrb(t_stacks_ab	*stacks, t_list	**rules);
+void	rrr(t_stacks_ab	*stacks, t_list	**rules);
 void	sa(t_stacks_ab	*stacks, t_list	**rules);
 void	sb(t_stacks_ab	*stacks, t_list	**rules);
+void	ss(t_stacks_ab	*stacks, t_list	**rules);
 
 //algoritm
 void	divide_into_chunks(t_stacks_ab	*stacks, t_list	**rules);

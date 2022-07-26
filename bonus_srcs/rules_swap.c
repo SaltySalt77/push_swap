@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_abs.c                                            :+:      :+:    :+:   */
+/*   rules_swap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 16:04:31 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/17 20:25:25 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 17:47:32 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,10 @@ void	sb(t_stacks_ab	*stacks, t_list	**rules)
 		return ;
 	s_abs(stacks->stack_b);
 	archive_used_rule(rules, SB);
+}
+
+void	ss(t_stacks_ab	*stacks, t_list	**rules)
+{
+	sa(stacks, rules);
+	sb(stacks, rules);
 }
