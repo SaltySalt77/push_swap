@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 14:03:09 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/26 18:19:17 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 18:43:34 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	**get_instr(void)
 	while (1)
 	{
 		cur = get_next_line(0);
-		if (cur	== NULL || cur[0] < 0)
+		if (cur == NULL || cur[0] < 0)
 			break ;
 		if (cur != NULL)
 		{
