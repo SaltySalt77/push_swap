@@ -6,7 +6,7 @@
 #    By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 11:09:53 by hyna              #+#    #+#              #
-#    Updated: 2022/07/26 15:21:55 by hyna             ###   ########.fr        #
+#    Updated: 2022/07/26 18:36:44 by hyna             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ SRCS_NAME = main.c\
 			algo_push_back_to_a.c\
 			etc_free_all.c\
 			
-BONUS_NAME = main.c\
+BONUS_SRCS_NAME = checker_main.c\
 			stack_utils.c\
 			init_stack_a.c\
 			is_in_order.c\
@@ -51,15 +51,15 @@ BONUS_NAME = main.c\
 SRCS_PATH = ./srcs
 SRCS = $(addprefix $(SRCS_PATH)/, $(SRCS_NAME))
 
-BONUS_PATH = ./bonus_srcs
-BONUS_SRCS = $(addprefix $(BONUS_PATH)/, $(BONUS_NAME))
+BONUS_PATH = ./srcs
+BONUS_SRCS = $(addprefix $(BONUS_PATH)/, $(BONUS_SRCS_NAME))
 
 OBJS_NAME = $(SRCS_NAME:.c=.o)
 OBJS_PATH = ./objs
 OBJS = $(addprefix $(OBJS_PATH)/, $(OBJS_NAME))
 
-BONUS_OBJS_NAME = $(BONUS_NAME:.c=.o)
-BONUS_OBJS_PATH = ./bonus_objs
+BONUS_OBJS_NAME = $(BONUS_SRCS_NAME:.c=.o)
+BONUS_OBJS_PATH = ./objs
 BONUS_OBJS = $(addprefix $(BONUS_OBJS_PATH)/, $(BONUS_OBJS_NAME))
 
 all : $(NAME)

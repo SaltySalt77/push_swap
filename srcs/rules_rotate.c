@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:57:04 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/17 20:25:21 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 17:45:39 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,10 @@ void	rb(t_stacks_ab	*stacks, t_list	**rules)
 		return ;
 	r_abr(stacks->stack_b);
 	archive_used_rule(rules, RB);
+}
+
+void	rr(t_stacks_ab	*stacks, t_list	**rules)
+{
+	ra(stacks, rules);
+	rb(stacks, rules);
 }
