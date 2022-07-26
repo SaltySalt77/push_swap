@@ -6,7 +6,7 @@
 #    By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 11:09:53 by hyna              #+#    #+#              #
-#    Updated: 2022/07/26 18:48:01 by hyna             ###   ########.fr        #
+#    Updated: 2022/07/26 19:51:58 by hyna             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,6 @@ $(BONUS_OBJS_PATH)/%.o : $(BONUS_PATH)/%.c
 clean :
 	@$(MAKE) -C ./lib/libft clean
 	rm -rf $(OBJS_PATH)
-	rm -rf $(BONUS_OBJS_PATH)
 
 fclean : clean
 	rm -rf ./lib/libft/libft.a
