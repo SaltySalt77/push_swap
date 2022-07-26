@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:06:25 by hyna              #+#    #+#             */
-/*   Updated: 2022/07/26 21:44:44 by hyna             ###   ########.fr       */
+/*   Updated: 2022/07/26 21:51:57 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,10 @@ static int	is_topside(t_stack	*stack, int num, int chunk)
 	return (1);
 }
 
-#include <stdio.h> // 지우기 ! 
 void	divide_into_chunks(t_stacks_ab	*stacks, t_list	**rules)
 {
-	int	chunk;
-	int	num;
+	int		chunk;
+	int		num;
 	t_node	*cur;
 
 	chunk = get_chunk(stacks->stack_a);
@@ -83,17 +82,8 @@ void	divide_into_chunks(t_stacks_ab	*stacks, t_list	**rules)
 	while (!is_empty(stacks->stack_a))
 	{
 		num = stacks->stack_b->count;
-		// printf("stack A size : %d\n", stacks->stack_a->count);
-		// printf("stack A element : %d\n", stacks->stack_a->top->element);
-		// printf("stack A idx : %d\n", stacks->stack_a->top->idx);
-		// printf("stack B : %d\n", num);
-
-		
 		if (cur->idx <= num)
-		{
-			// printf("HEY!!\n");
 			pb(stacks, rules);
-		}
 		else if (cur->idx > num && cur->idx <= num + chunk)
 		{
 			pb(stacks, rules);
